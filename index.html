@@ -32,47 +32,47 @@
       <!-- Timeblocks go here -->
       
       
-      <div class="input-group row time-block">
+      <div class="input-group row time-block" id="hour-9">
         <span class="input-group-text hour ">9</span>
         <textarea id="9" class="form-control description" aria-label="With textarea"></textarea>
         <button class="saveBtn i:hover" type="button" id="button-addon2">Save</button>
       </div>
-      <div class="input-group row time-block">
+      <div class="input-group row time-block" id="hour-10">
         <span class="input-group-text hour">10</span>
         <textarea id="10" class="form-control description " aria-label="With textarea"></textarea>
         <button class="saveBtn i:hover" type="button" id="button-addon2">Save</button>
       </div>
-      <div class="input-group row time-block">
+      <div class="input-group row time-block" id="hour-11">
         <span class="input-group-text hour">11</span>
         <textarea id="11" class="form-control description" aria-label="With textarea"></textarea>
         <button class="saveBtn i:hover" type="button" id="button-addon2">Save</button>
       </div>
-      <div class="input-group row time-block">
+      <div class="input-group row time-block" id="hour-12">
         <span class="input-group-text hour">12</span>
         <textarea id="12"class="form-control description" aria-label="With textarea"></textarea>
         <button class="saveBtn i:hover" type="button" id="button-addon2">Save</button>
       </div>
-      <div class="input-group row time-block">
+      <div class="input-group row time-block" id="hour-13">
         <span class="input-group-text hour">1</span>
         <textarea id="13" class="form-control description" aria-label="With textarea"></textarea>
         <button class="saveBtn i:hover" type="button" id="button-addon2">Save</button>
       </div>
-      <div class="input-group row time-block">
+      <div class="input-group row time-block" id="hour-14">
         <span class="input-group-text hour">2</span>
         <textarea id="14" class="form-control description" aria-label="With textarea"></textarea>
         <button class="saveBtn i:hover" type="button" id="button-addon2">Save</button>
       </div>
-      <div class="input-group row time-block">
+      <div class="input-group row time-block" id="hour-15">
         <span class="input-group-text hour">3</span>
         <textarea id="15"class="form-control description" aria-label="With textarea"></textarea>
         <button class="saveBtn i:hover" type="button" id="button-addon2">Save</button>
       </div>
-      <div class="input-group row time-block">
+      <div class="input-group row time-block" id="hour-16">
         <span class="input-group-text hour">4</span>
         <textarea id="16"class="form-control description" aria-label="With textarea"></textarea>
         <button class="saveBtn i:hover" type="button" id="button-addon2">Save</button>
       </div>
-      <div class="input-group row time-block">
+      <div class="input-group row time-block" id="hour-17">
         <span class="input-group-text hour">5</span>
         <textarea id="17"class="form-control description" aria-label="With textarea"></textarea>
         <button class="saveBtn i:hover" type="button" id="button-addon2">Save</button>
@@ -111,11 +111,11 @@
             $(".form" + x[i]).val(dataHour);
         }
 
-        $(".saveBtn").click(function () {
+        $(".button").click(function () {
             event.preventDefault();
             var formValue = $(this).siblings(".form-control").val();
             console.log("This worked");
-            var listItem = $(this).parent().data("hour");
+            var listItem = $(this).parent().attr("id");
             localStorage.setItem(listItem, formValue);
         });
 
@@ -140,7 +140,15 @@
           pastPresentFuture();
         
 
-
+    $("#hour-9 .description") .val(localStorage.getItem("hour-9"))
+    $("#hour-10 .description") .val(localStorage.getItem("hour-10"))
+    $("#hour-11 .description") .val(localStorage.getItem("hour-11"))
+    $("#hour-12 .description") .val(localStorage.getItem("hour-12"))
+    $("#hour-13 .description") .val(localStorage.getItem("hour-13"))
+    $("#hour-14 .description") .val(localStorage.getItem("hour-14"))
+    $("#hour-15 .description") .val(localStorage.getItem("hour-15"))
+    $("#hour-16 .description") .val(localStorage.getItem("hour-16"))
+    $("#hour-17 .description") .val(localStorage.getItem("hour-17"))
 
         
     </script>
